@@ -29,7 +29,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={`${body.variable} ${heading.variable}`}>
       <body>
-        <main className="mx-auto w-full max-w-xl px-4 pt-[max(1rem,env(safe-area-inset-top))] pb-28">
+        <main className="mx-auto w-full max-w-xl px-4 pt-[max(1rem,env(safe-area-inset-top))] pb-[calc(7rem+var(--badge-space,0px))]">
           {children}
         </main>
         <BottomNav uid={uid} />

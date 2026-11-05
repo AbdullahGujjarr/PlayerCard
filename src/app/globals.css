@@ -84,3 +84,8 @@ dialog::backdrop {
   background: var(--color-surface);
   color: var(--color-ink);
 }
+
+/* Netlify's plan badge covers the bottom of the screen; keep the menu above it. */
+body:has(#nl-badge-frame) {
+  --badge-space: 64px;
+}

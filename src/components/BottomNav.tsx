@@ -28,7 +28,7 @@ export function BottomNav({ uid }: { uid: string | null }) {
     { href: myCard, label: "My card", d: icon.card, active: pathname === myCard || pathname === "/edit" },
   ];
   return (
-    <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)]">
+    <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-20 border-t border-line bg-surface pb-[max(env(safe-area-inset-bottom),var(--badge-space,0px))]">
       <ul className="mx-auto flex max-w-xl">
         {items.map((item) => (
           <li key={item.label} className="flex-1">
