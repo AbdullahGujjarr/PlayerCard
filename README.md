@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DropCard
 
-## Getting Started
+A mobile-first installable web app where PUBG Mobile players log matches with a
+screenshot, track progress, and share a player card. Built with Next.js, MongoDB
+Atlas and Cloudinary.
 
-First, run the development server:
+## Run locally
+
+1. Copy `.env.example` to `.env.local` and fill in the values.
+2. Install and start:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Use `npm test` for the screenshot parser tests.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Atlas connection
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`MONGODB_URI` can be the `mongodb+srv://` string from Atlas. If that fails with
+`queryTxt ETIMEOUT`, the network is blocking the DNS TXT lookup; use the standard
+`mongodb://host1,host2,host3/?tls=true&authSource=admin` form instead.
 
-## Learn More
+Atlas must also allow the server's IP under Network Access.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy to any Node host, such as Vercel. Add every variable from `.env.example`
+to the host and set `NEXT_PUBLIC_SITE_URL` to the real domain so share previews
+work. Installing to the home screen needs HTTPS.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Rename the app
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The name and tagline live in `src/lib/brand.ts`. Also update the icons in
+`public/icons`.
